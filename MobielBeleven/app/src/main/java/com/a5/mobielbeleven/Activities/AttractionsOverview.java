@@ -14,7 +14,6 @@ public class AttractionsOverview extends AppCompatActivity {
         setContentView(R.layout.activity_attractions_overview);
 
         TextView titleBar = (TextView) findViewById(R.id.titlebar_txt_1_id);
-        String[] className = getLocalClassName().split("\\.");
-        titleBar.setText(className[className.length - 1]);
+        titleBar.setText("Attracties");
     }
 }
