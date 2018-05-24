@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MobielBeleven</string>
+    <string name="go_button">Go</string>
+    <string name="QR_button">QR</string>
+    <string name="attractions_button">Rides</string>
+    <string name="map_button">Map</string>
+    <string name="gallery_button">Gallery</string>
+</resources>

@@ -12,7 +12,6 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -23,7 +22,7 @@
         android:layout_width="102dp"
         android:layout_height="99dp"
         android:layout_marginBottom="60dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="40dp"
         android:background="@drawable/circle_button_home"
         android:text="@string/go_button"
         android:textColor="@android:color/background_light"
@@ -37,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/map_button"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_4_id"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -46,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/attractions_button"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_3_id"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -55,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/QR_button"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_2_id"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -63,6 +65,7 @@
         android:id="@+id/home_bttn_4_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:text="@string/gallery_button"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent" />
