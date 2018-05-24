@@ -23,7 +23,7 @@
         android:layout_width="102dp"
         android:layout_height="99dp"
         android:layout_marginBottom="60dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/circle_button_home"
         android:text="@string/go_button"
@@ -33,7 +33,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintVertical_bias="0.86" />
 
     <Button
         android:id="@+id/home_bttn_3_id"
