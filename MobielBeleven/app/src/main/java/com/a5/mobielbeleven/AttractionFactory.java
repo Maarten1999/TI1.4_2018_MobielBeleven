@@ -19,7 +19,7 @@ public class AttractionFactory
                 "Cobra",
                 "Achtbaan",
                 "Zet je wereld op z’n kop en ontsnap aan de draaiende wurggreep van de Cobra die in alle rust op je wacht. Overleef de kronkelende bewegingen op grote hoogte in deze stalen achtbaan met dubbele looping en kurkentrekker.",
-                "dinges-img-1.png",
+                "",
                 "Spelletje",
                 "Snake")
                         );
