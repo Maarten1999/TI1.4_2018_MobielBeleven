@@ -10,13 +10,14 @@
         android:id="@+id/home_background_id"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:color/holo_blue_light" />
+        app:srcCompat="@drawable/achtergrond1" />
 
     <Button
         android:id="@+id/home_bttn_go_id"
@@ -24,46 +25,58 @@
         android:layout_height="99dp"
         android:layout_marginBottom="60dp"
         android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/circle_button_home"
         android:text="@string/go_button"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17" />
 
     <Button
         android:id="@+id/home_bttn_3_id"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginBottom="24dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        android:background="#82a21829"
         android:text="@string/map_button"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_4_id"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/home_bttn_2_id"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        android:background="#82a21829"
         android:text="@string/attractions_button"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_3_id"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/home_bttn_1_id"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        android:background="#82a21829"
         android:text="@string/QR_button"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_2_id"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/home_bttn_4_id"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginBottom="88dp"
+        android:background="#82a21829"
         android:text="@string/gallery_button"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent" />
 
