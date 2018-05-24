@@ -31,6 +31,15 @@ public class MainActivity extends AppCompatActivity
 
         gOTimer();
         goButton.setEnabled(enableFlag);
+        if(enableFlag)
+        {
+            goButton.setBackground(getDrawable(R.drawable.circle_button_home));
+        }
+        else
+        {
+            goButton.setBackground(getDrawable(R.drawable.circle_button_home_grey));
+        }
+
     }
 
     private void initNavigationButtons()
@@ -123,13 +132,12 @@ public class MainActivity extends AppCompatActivity
                     {
                         if (inRange)
                         {
-                            goButton.setBackgroundResource(R.color.go_circle_button_solid_color);
                             enableFlag = true;
                         }
                         else
                         {
-                           goButton.setBackgroundResource(R.color.go_circle_button_solid_color_grey);
-                           enableFlag = true;
+
+                           enableFlag = false;
                         }
                     }
                 };
