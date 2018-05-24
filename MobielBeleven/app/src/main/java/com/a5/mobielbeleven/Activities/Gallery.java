@@ -26,7 +26,7 @@ public class Gallery extends AppCompatActivity
         setContentView(R.layout.activity_gallery);
 
         TextView titleBar = (TextView) findViewById(R.id.titlebar_txt_1_id);
-        titleBar.setText("Foto's");
+        titleBar.setText(getApplicationContext().getString(R.string.gallery_button));
 
         picturesIDs = new ArrayList<>();
         initPictures();

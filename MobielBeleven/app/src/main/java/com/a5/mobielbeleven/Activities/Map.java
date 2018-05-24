@@ -16,6 +16,6 @@ public class Map extends AppCompatActivity
         setContentView(R.layout.activity_map);
 
         TextView titleBar = (TextView) findViewById(R.id.titlebar_txt_1_id);
-        titleBar.setText("Plattegrond");
+        titleBar.setText(getApplicationContext().getString(R.string.map_button));
     }
 }
