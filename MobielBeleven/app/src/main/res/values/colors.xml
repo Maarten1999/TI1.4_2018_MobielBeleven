@@ -10,4 +10,8 @@
     <color name="backgroundGreen">#76c848</color>
     <color name= "orange" >#b5f28b23</color>
     <color name= "red">#a21829</color>
+    <color name= "pink">#82a21829</color>
+    <color name= "grey">#3caaaaaa</color>
+
+
 </resources>

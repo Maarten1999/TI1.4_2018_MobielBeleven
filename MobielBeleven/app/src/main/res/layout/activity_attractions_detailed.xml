@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Activities.AttractionsDetailed">
 
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="0dp"
+        android:layout_height="508dp"
+        android:src="#3caaaaaa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/attraction_detail_image_id" />
+
     <include
         android:id="@+id/titlebar"
         layout="@layout/titlebar"
@@ -78,4 +88,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/attraction_detail_txt_id"
         app:layout_constraintVertical_bias="0.039" />
+
 </android.support.constraint.ConstraintLayout>
