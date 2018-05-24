@@ -1,6 +1,6 @@
 package com.a5.mobielbeleven.Activities;
 
-import java.awt.*;
+//import java.awt.*;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -27,6 +27,7 @@
         android:id="@+id/map_imageview_map_id"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         android:background="@color/backgroundGreen"
         android:src="@drawable/map"
         app:layout_constraintBottom_toBottomOf="parent"

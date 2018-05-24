@@ -37,45 +37,45 @@
 
     <Button
         android:id="@+id/home_bttn_3_id"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_marginBottom="16dp"
         android:background="#82a21829"
         android:text="@string/map_button"
-        android:textColor="@android:color/background_dark"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_4_id"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/home_bttn_2_id"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_marginBottom="16dp"
         android:background="#82a21829"
         android:text="@string/attractions_button"
-        android:textColor="@android:color/background_dark"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_3_id"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/home_bttn_1_id"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_marginBottom="16dp"
         android:background="#82a21829"
         android:text="@string/QR_button"
-        android:textColor="@android:color/background_dark"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_2_id"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/home_bttn_4_id"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_marginBottom="88dp"
         android:background="#82a21829"
         android:text="@string/gallery_button"
-        android:textColor="@android:color/background_dark"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent" />
 
