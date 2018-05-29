@@ -74,7 +74,7 @@ public class AttractionFactory
         attractions.add(new Attraction(
                 "Herr Kannibale",
                 "Draaimolen",
-                "herrKannibale.jpg",
+                "herrkannibale.jpg",
                 "Op het eiland van Herr Kannibale draaien grote kookketels continu rond boven een knapperend vuur. Een ieder die voet aan land zet, mag plaatsnemen in dit duizelingwekkend avontuur totdat ze de kannibaal om genade smeekt.",
                 "Raadsel",
                 "")
