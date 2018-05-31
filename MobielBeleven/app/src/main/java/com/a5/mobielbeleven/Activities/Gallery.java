@@ -60,6 +60,10 @@ public class Gallery extends AppCompatActivity
         picturesIDs.add("picture3");
         picturesIDs.add("picture4");
         picturesIDs.add("picture5");
+        picturesIDs.add("picture6");
+        picturesIDs.add("picture7");
+        picturesIDs.add("picture8");
+        picturesIDs.add("picture9");
         Log.i("","arralist gevuld \n Finally");
     }
 }

@@ -1,8 +1,6 @@
 package com.a5.mobielbeleven.Activities;
 
-
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -47,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(),
-                        QR.class
+                        SnakeMenu.class
                 );
                 startActivity(intent);
             }

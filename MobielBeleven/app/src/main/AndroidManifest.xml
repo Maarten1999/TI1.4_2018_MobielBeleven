@@ -49,8 +49,10 @@
             android:screenOrientation="portrait">
             >
         </activity>
-        <activity android:name=".Activities.Puzzle" />
-        <activity android:name=".Activities.GalleryDetailedImage"></activity>
+        <activity android:name=".Puzzle" />
+        <activity android:name=".Activities.GalleryDetailedImage" />
+        <activity android:name=".Activities.Snake" />
+        <activity android:name=".Activities.SnakeMenu"></activity>
     </application>
 
 </manifest>
