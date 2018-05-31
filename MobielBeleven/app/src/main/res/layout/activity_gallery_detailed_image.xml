@@ -4,19 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange"
-    tools:context=".Activities.Gallery">
-
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@color/grey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:background="@android:color/black"
+    tools:context=".Activities.GalleryDetailedImage">
 
     <include
         android:id="@+id/titlebar"
@@ -35,17 +24,14 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.12" />
 
-    <GridView
-        android:id="@+id/gallery_grid_1_id"
+    <ImageView
+        android:id="@+id/photo_detailed_image_id"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:columnWidth="152dp"
-        android:gravity="center"
-        android:numColumns="auto_fit"
-        android:stretchMode="spacingWidthUniform"
+        android:src="@android:color/background_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
 </android.support.constraint.ConstraintLayout>

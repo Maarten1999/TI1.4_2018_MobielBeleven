@@ -7,4 +7,5 @@
     <string name="map_button">Map</string>
     <string name="gallery_button">Gallery</string>
     <string name="QR_Text">Scan the QR-code at the start of the ride.</string>
+    <string name="photo_titlebar_text">Photo</string>
 </resources>

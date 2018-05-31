@@ -6,6 +6,7 @@
     <string name="map_button">Plattegrond</string>
     <string name="gallery_button">Foto\'s</string>
     <string name="QR_Text">Scan de QR-code die bij het begin van de attractie is aangegeven.</string>
+    <string name="photo_titlebar_text">Foto</string>
 
 
 </resources>

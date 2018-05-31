@@ -6,7 +6,7 @@
         android:id="@+id/titlebar_view_1_id"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/red"
+        android:background="@drawable/title_border_view_2"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

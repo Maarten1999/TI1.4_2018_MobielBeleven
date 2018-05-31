@@ -1,5 +1,6 @@
 package com.a5.mobielbeleven.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,8 +41,14 @@ public class Gallery extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
             {
-                Toast.makeText(Gallery.this,"" + i,
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(
+                        getApplicationContext(),
+                        GalleryDetailedImage.class
+                );
+
+                String pictureID = picturesIDs.get(i);
+                intent.putExtra("PHOTO_OBJECT", pictureID);
+                startActivity(intent);
             }
         });
     }
