@@ -2,11 +2,16 @@
   <library name="Gradle: com.android.support:appcompat-v7-26.1.0">
     <CLASSES>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/cd23c5e90413f5e5e0d5e96f024439aa/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/cd23c5e90413f5e5e0d5e96f024439aa/jars/classes.jar!/" />
 =======
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f064dacbd3e1476caf483f4b57d7e10b/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f064dacbd3e1476caf483f4b57d7e10b/res" />
+>>>>>>> Stashed changes
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/d9a8ed71228d3e8f85f218ab2fb526e9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/d9a8ed71228d3e8f85f218ab2fb526e9/res" />
 >>>>>>> Stashed changes
     </CLASSES>
     <JAVADOC />

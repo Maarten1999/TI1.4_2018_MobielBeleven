@@ -10,13 +10,13 @@
         android:id="@+id/home_background_id"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/achtergrond1" />
+        app:srcCompat="@drawable/backgroundessteling" />
 
     <Button
         android:id="@+id/home_bttn_go_id"
@@ -33,16 +33,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/home_bttn_3_id"
         android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_marginBottom="16dp"
-        android:background="#82a21829"
+        android:background="@drawable/shape"
+        android:fontFamily="casual"
         android:text="@string/map_button"
         android:textColor="@android:color/background_light"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_4_id"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -51,9 +53,11 @@
         android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_marginBottom="16dp"
-        android:background="#82a21829"
+        android:background="@drawable/shape"
+        android:fontFamily="casual"
         android:text="@string/attractions_button"
         android:textColor="@android:color/background_light"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_3_id"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -62,9 +66,11 @@
         android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_marginBottom="16dp"
-        android:background="#82a21829"
+        android:background="@drawable/shape"
+        android:fontFamily="casual"
         android:text="@string/QR_button"
         android:textColor="@android:color/background_light"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/home_bttn_2_id"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -73,9 +79,11 @@
         android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_marginBottom="88dp"
-        android:background="#82a21829"
+        android:background="@drawable/shape"
+        android:fontFamily="casual"
         android:text="@string/gallery_button"
         android:textColor="@android:color/background_light"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent" />
 
