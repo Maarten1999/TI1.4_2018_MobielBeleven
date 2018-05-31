@@ -6,16 +6,18 @@ public class Attraction implements Serializable
 {
     String name;
     String type;
-    String description;
+    String description_nl;
+    String description_en;
     String image;
     String functionType;
     String functionDetails;
 
-    public Attraction(String name, String type, String description, String image, String functionType, String functionDetails)
+    public Attraction(String name, String type, String description_nl, String description_en, String image, String functionType, String functionDetails)
     {
         this.name = name;
         this.type = type;
-        this.description = description;
+        this.description_nl = description_nl;
+        this.description_en = description_en;
         this.image = image;
         this.functionType = functionType;
         this.functionDetails = functionDetails;
@@ -29,9 +31,13 @@ public class Attraction implements Serializable
     {
         return type;
     }
-    public String getDescription()
+    public String getDescription_nl()
     {
-        return description;
+        return description_nl;
+    }
+    public String getDescription_en()
+    {
+        return description_en;
     }
     public String getImage()
     {
@@ -52,7 +58,8 @@ public class Attraction implements Serializable
         return "Attraction{" +
                 "name='" + name + '\'' +
                 ", type='" + type + '\'' +
-                ", description='" + description + '\'' +
+                ", description_nl='" + description_nl + '\'' +
+                ", description_en='" + description_en + '\'' +
                 ", image='" + image + '\'' +
                 ", functionType='" + functionType + '\'' +
                 ", functionDetails='" + functionDetails + '\'' +
