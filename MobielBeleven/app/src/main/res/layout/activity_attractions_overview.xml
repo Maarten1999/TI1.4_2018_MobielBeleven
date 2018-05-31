@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.AttractionsOverview">
+    tools:context=".Activities.AttractionsOverview"
+    android:background="@color/orange">
 
     <include
         android:id="@+id/titlebar"

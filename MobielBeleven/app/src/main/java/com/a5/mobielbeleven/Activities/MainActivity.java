@@ -1,8 +1,6 @@
 package com.a5.mobielbeleven.Activities;
 
-import java.awt.*;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(),
-                        QR.class
+                        SnakeMenu.class
                 );
                 startActivity(intent);
             }
@@ -94,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 String id = "0";
                 Intent intent = new Intent();
 
+
                 if (inRange) {
                     switch (id) {
                         case "1":
@@ -103,10 +102,10 @@ public class MainActivity extends AppCompatActivity {
                             intent = new Intent(getApplicationContext(), QR.class);
                             break;
                     }
+                    startActivity(intent);
                 } else {
-                    intent = new Intent(getApplicationContext(), QR.class);
+         //           intent = new Intent(getApplicationContext(), QR.class);
                 }
-                startActivity(intent);
             }
         });
     }

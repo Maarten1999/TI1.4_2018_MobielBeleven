@@ -7,6 +7,10 @@
     <string name="gallery_button">Foto\'s</string>
     <string name="QR_Text">Scan de QR-code die bij het begin van de attractie is aangegeven.</string>
     <string name="photo_titlebar_text">Foto</string>
+    <string name="snake_menu_text">Snake Menu</string>
+    <string name="send_button">Stuur</string>
+    <string name="new_game">Nieuw Spel</string>
+    <string name="snake_menu_button_improve">Verbeter</string>
 
 
 </resources>
