@@ -2,6 +2,8 @@ package com.a5.mobielbeleven.Activities;
 
 //import java.awt.*;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,48 +11,39 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import com.a5.mobielbeleven.Adapters.BaeconAdapter;
 import com.a5.mobielbeleven.R;
 
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity {
     static Timer timer = new Timer();
     static int seconds = 0;
     Button goButton;
-    Boolean inRange =false;
+    Boolean inRange = false;
     TimerTask task;
-    Boolean enableFlag = false;
+    BaeconAdapter beacon;
+    final Handler handler_interact = new Handler();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        beacon = new BaeconAdapter();
 
         initNavigationButtons();
 
         gOTimer();
-        goButton.setEnabled(enableFlag);
-        if(enableFlag)
-        {
-            goButton.setBackground(getDrawable(R.drawable.circle_button_home));
-        }
-        else
-        {
-            goButton.setBackground(getDrawable(R.drawable.circle_button_home_grey));
-        }
+
 
     }
 
-    private void initNavigationButtons()
-    {
+    private void initNavigationButtons() {
         goButton = findViewById(R.id.home_bttn_go_id);
         Button QRButton = findViewById(R.id.home_bttn_1_id);
-        QRButton.setOnClickListener(new AdapterView.OnClickListener()
-        {
+        QRButton.setOnClickListener(new AdapterView.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         QR.class
@@ -60,11 +53,9 @@ public class MainActivity extends AppCompatActivity
         });
 
         Button attractionsButton = findViewById(R.id.home_bttn_2_id);
-        attractionsButton.setOnClickListener(new AdapterView.OnClickListener()
-        {
+        attractionsButton.setOnClickListener(new AdapterView.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         AttractionsOverview.class
@@ -74,11 +65,9 @@ public class MainActivity extends AppCompatActivity
         });
 
         Button mapButton = findViewById(R.id.home_bttn_3_id);
-        mapButton.setOnClickListener(new AdapterView.OnClickListener()
-        {
+        mapButton.setOnClickListener(new AdapterView.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         Map.class
@@ -88,11 +77,9 @@ public class MainActivity extends AppCompatActivity
         });
 
         Button galleryButton = findViewById(R.id.home_bttn_4_id);
-        galleryButton.setOnClickListener(new AdapterView.OnClickListener()
-        {
+        galleryButton.setOnClickListener(new AdapterView.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         Gallery.class
@@ -101,47 +88,58 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        goButton.setOnClickListener(new AdapterView.OnClickListener()
-        {
+        goButton.setOnClickListener(new AdapterView.OnClickListener() {
             @Override
-            public void onClick(View view)
-            { String id = "0";
+            public void onClick(View view) {
+                String id = "0";
                 Intent intent = new Intent();
 
-                switch (id)
-                {
-                    case "1":
-                        intent = new Intent(getApplicationContext(), QR.class);
-                        break;
-                    case "2":
-                        intent = new Intent(getApplicationContext(), QR.class);
-                        break;
+                if (inRange) {
+                    switch (id) {
+                        case "1":
+                            intent = new Intent(getApplicationContext(), QR.class);
+                            break;
+                        case "2":
+                            intent = new Intent(getApplicationContext(), QR.class);
+                            break;
+                    }
+                } else {
+                    intent = new Intent(getApplicationContext(), QR.class);
                 }
-
                 startActivity(intent);
             }
         });
     }
 
-    public  void gOTimer() {
+    public void gOTimer() {
 
-                task = new TimerTask() {
+        task = new TimerTask() {
 
-                    @Override
-                    public void run()
-                    {
-                        if (inRange)
-                        {
-                            enableFlag = true;
-                        }
-                        else
-                        {
+            @Override
+            public void run() {
+                //TODO: een methode maken in de sensor adapter voor het zetten van inrange
+                inRange = beacon.getInRange();
+                updateButton();
 
-                           enableFlag = false;
-                        }
-                    }
-                };
-                timer.schedule(task, 0, 1000);
+            }
+        };
+        timer.schedule(task, 0, 1000);
 
-           }
+    }
+
+    private void updateButton() {
+        handler_interact.post(runnable_interact);
+    }
+
+    //creating runnable
+    final Runnable runnable_interact = new Runnable() {
+        public void run() {
+            if (inRange) {
+                goButton.setBackground(getDrawable(R.drawable.circle_button_home));
+            } else {
+                goButton.setBackground(getDrawable(R.drawable.circle_button_home_grey));
+            }
+        }
+
+    };
 }
