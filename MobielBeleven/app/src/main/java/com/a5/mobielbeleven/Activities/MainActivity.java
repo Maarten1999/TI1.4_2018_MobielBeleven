@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 if (inRange && id != "0") {
                     switch (id) {
                         case "1":
-                            intent = new Intent(getApplicationContext(), QR.class);
+                            intent = new Intent(getApplicationContext(), Puzzle.class);
                             break;
                         case "2":
                             intent = new Intent(getApplicationContext(), QR.class);

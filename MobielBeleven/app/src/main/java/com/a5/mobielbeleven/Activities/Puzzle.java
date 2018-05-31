@@ -1,7 +1,6 @@
-package com.a5.mobielbeleven;
+package com.a5.mobielbeleven.Activities;
 
-import android.content.Context;
-import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.a5.mobielbeleven.R;
 
 public class Puzzle extends AppCompatActivity {
 
@@ -21,10 +22,14 @@ public class Puzzle extends AppCompatActivity {
     private int index = 1;
 
 
+
     public Puzzle(String puzzleQuestion, String answer, int attractionNumber) {
         this.puzzleQuestion = puzzleQuestion;
         this.answer = answer;
         this.attractionNumber = attractionNumber;
+    }
+
+    public Puzzle() {
     }
 
     public String getPuzzleQuestion() {
@@ -39,16 +44,16 @@ public class Puzzle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puzzle);
 
-        puzzleQuestionScreen.findViewById(R.id.puzzle_question);
+        puzzleQuestionScreen = findViewById(R.id.puzzle_question);
         puzzleQuestionScreen.setText(puzzleList[attractionNumber].getPuzzleQuestion());
+        answer = puzzleList[attractionNumber].getAnswer();
+        answerScreen = findViewById(R.id.answer_id);
 
-        answerScreen.findViewById(R.id.answer_id);
-
-        submit.findViewById(R.id.submit_btn);
+        submit = findViewById(R.id.submit_btn);
         submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (correctAnswer()==true){
-                    Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_LONG);
+                if (correctAnswer()){
+                    submit.setText("Goed");
                 }
             }
         });
@@ -58,7 +63,7 @@ public class Puzzle extends AppCompatActivity {
     }
 
     public boolean correctAnswer(){
-        if (answer == answerScreen.getText().toString() ){
+        if (answer.equals( answerScreen.getText().toString())){
             return true;
         }
         return false;
