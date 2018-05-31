@@ -1,6 +1,6 @@
 package com.a5.mobielbeleven.Activities;
 
-//import java.awt.*;
+import java.awt.*;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
     final Handler handler_interact = new Handler();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         beacon = new BaeconAdapter();
