@@ -7,15 +7,8 @@
     android:background="@color/orange"
     tools:context=".Activities.AttractionsOverview">
 
-    <include
-        android:id="@+id/titlebar"
-        layout="@layout/titlebar"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <include layout="@layout/activity_toolbar"
+        android:id="@+id/toolbar"/>
 
     <ListView
         android:id="@+id/attraction_list_1_id"
@@ -41,13 +34,7 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
 
 </android.support.constraint.ConstraintLayout>

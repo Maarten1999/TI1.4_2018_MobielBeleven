@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -21,7 +22,7 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 
-public class QR extends AppCompatActivity {
+public class QR extends BaseToolbar {
 
     private SurfaceView cameraPreview;
     BarcodeDetector barcodeDetector;
@@ -56,11 +57,10 @@ public class QR extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr);
-
-        TextView titleBar = (TextView) findViewById(R.id.titlebar_txt_1_id);
-        titleBar.setText(getApplicationContext().getString(R.string.QR_button));
+        displayToolbar();
+        getSupportActionBar().setTitle(R.string.QR_button);
+        super.onCreate(savedInstanceState);
 
         cameraPreview = (SurfaceView) findViewById(R.id.qr_Code_ID);
 

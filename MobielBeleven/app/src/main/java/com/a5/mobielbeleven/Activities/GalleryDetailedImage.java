@@ -3,23 +3,23 @@ package com.a5.mobielbeleven.Activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.a5.mobielbeleven.R;
 
-public class GalleryDetailedImage extends AppCompatActivity
+public class GalleryDetailedImage extends BaseToolbar
 {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery_detailed_image);
-
-        TextView titleBar = (TextView) findViewById(R.id.titlebar_txt_1_id);
-        titleBar.setText(getApplicationContext().getString(R.string.photo_titlebar_text));
+        displayToolbar();
+        getSupportActionBar().setTitle(R.string.photo_titlebar_text);
+        super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
         String pictureID = (String) intent.getSerializableExtra("PHOTO_OBJECT");

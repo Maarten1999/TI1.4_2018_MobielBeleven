@@ -12,5 +12,6 @@
     <string name="send_button">Send</string>
     <string name="new_game">New Game</string>
     <string name="snake_menu_button_improve">Improve</string>
+    <string name="puzzle_text">Puzzle</string>
 
 </resources>
