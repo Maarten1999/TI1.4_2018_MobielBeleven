@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(),
-                        SnakeMenu.class
+                        QR.class
                 );
                 startActivity(intent);
             }
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         goButton.setOnClickListener(new AdapterView.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String id = "1";
+                String id = String.valueOf(Math.round((float)(1+Math.random()*2)));
                 Intent intent = new Intent();
 
                 if (inRange && id != "0") {
@@ -101,11 +101,14 @@ public class MainActivity extends AppCompatActivity {
                         case "2":
                             intent = new Intent(getApplicationContext(), QR.class);
                             break;
+                        case "3":
+                            intent = new Intent(getApplicationContext(), SnakeMenu.class);
+                            break;
                     }
                     startActivity(intent);
                 } else {
                     Snackbar snackbar = Snackbar
-                            .make(view, "no game avaible", Snackbar.LENGTH_LONG);
+                            .make(view, "No game avaible", Snackbar.LENGTH_LONG);
 
                     snackbar.show();
                 }

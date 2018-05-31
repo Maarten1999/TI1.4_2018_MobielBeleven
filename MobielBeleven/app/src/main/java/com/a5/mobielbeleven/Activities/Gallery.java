@@ -3,6 +3,7 @@ package com.a5.mobielbeleven.Activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,7 +16,7 @@ import com.a5.mobielbeleven.R;
 
 import java.util.ArrayList;
 
-public class Gallery extends AppCompatActivity
+public class Gallery extends BaseToolbar
 {
 
     ArrayList<String> picturesIDs;
@@ -23,11 +24,10 @@ public class Gallery extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
-
-        TextView titleBar = (TextView) findViewById(R.id.titlebar_txt_1_id);
-        titleBar.setText(getApplicationContext().getString(R.string.gallery_button));
+        displayToolbar();
+        getSupportActionBar().setTitle(R.string.gallery_button);
+        super.onCreate(savedInstanceState);
 
         picturesIDs = new ArrayList<>();
         initPictures();

@@ -3,6 +3,7 @@ package com.a5.mobielbeleven.Activities;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 
 import com.a5.mobielbeleven.R;
 
-public class Puzzle extends AppCompatActivity {
+public class Puzzle extends BaseToolbar {
 
     private String puzzleQuestion;
     private String answer;
@@ -41,8 +42,10 @@ public class Puzzle extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puzzle);
+        displayToolbar();
+        getSupportActionBar().setTitle(R.string.puzzle_text);
+        super.onCreate(savedInstanceState);
 
         puzzleQuestionScreen = findViewById(R.id.puzzle_question);
         puzzleQuestionScreen.setText(puzzleList[attractionNumber].getPuzzleQuestion());

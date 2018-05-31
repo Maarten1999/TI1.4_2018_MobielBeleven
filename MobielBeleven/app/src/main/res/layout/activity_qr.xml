@@ -7,22 +7,8 @@
     android:background="@color/orange"
     tools:context=".Activities.QR">
 
-    <include
-        android:id="@+id/titlebar"
-        layout="@layout/titlebar"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        app:layout_constraintBottom_toTopOf="@id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
+    <include layout="@layout/activity_toolbar"
+        android:id="@+id/toolbar"/>
 
     <TextView
         android:id="@+id/qr_txt_instruction_id"
@@ -34,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <SurfaceView
         android:id="@+id/qr_Code_ID"

@@ -11,6 +11,8 @@
     <string name="send_button">Stuur</string>
     <string name="new_game">Nieuw Spel</string>
     <string name="snake_menu_button_improve">Verbeter</string>
+    <string name="puzzle_text">Puzzel</string>
+    <string name="title_activity_toolbar">Toolbar</string>
 
 
 </resources>

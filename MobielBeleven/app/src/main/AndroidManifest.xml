@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.a5.mobielbeleven">
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -23,9 +24,6 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="com.google.android.gms.vision.DEPENDENCIES"
-            android:value="barcode" />
 
         <activity
             android:name=".Activities.AttractionsOverview"
@@ -49,10 +47,19 @@
             android:screenOrientation="portrait">
             >
         </activity>
-        <activity android:name=".Puzzle" />
+        <activity android:name=".Activities.Puzzle" />
         <activity android:name=".Activities.GalleryDetailedImage" />
         <activity android:name=".Activities.Snake" />
-        <activity android:name=".Activities.SnakeMenu"></activity>
+        <activity android:name=".Activities.SnakeMenu" />
+        <activity
+            android:name=".Activities.BaseToolbar"
+            android:label="@string/title_activity_toolbar"
+            android:theme="@style/AppTheme"></activity>
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode"
+            tools:replace="android:value" />
     </application>
 
 </manifest>

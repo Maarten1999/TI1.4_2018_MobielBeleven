@@ -1,18 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.android.support:animated-vector-drawable-26.1.0">
     <CLASSES>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/9cdc2919a773c283455debbc5912a1c1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/9cdc2919a773c283455debbc5912a1c1/res" />
-=======
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/7f76515e09afa67015f23eaa8f8a6ad1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/7f76515e09afa67015f23eaa8f8a6ad1/jars/classes.jar!/" />
->>>>>>> Stashed changes
-=======
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/96b0832c12e9e8e207078c6c9ebc71ed/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/96b0832c12e9e8e207078c6c9ebc71ed/res" />
->>>>>>> Snake
     </CLASSES>
     <JAVADOC />
     <SOURCES>

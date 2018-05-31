@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,7 +15,7 @@ import android.widget.Toast;
 
 import com.a5.mobielbeleven.R;
 
-public class SnakeMenu extends AppCompatActivity
+public class SnakeMenu extends BaseToolbar
 {
     private TextView scoreBoard;
     Button sendButton,newGameButton;
@@ -22,11 +24,10 @@ public class SnakeMenu extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_snake_menu);
-
-        TextView titleBar = (TextView) findViewById(R.id.titlebar_txt_1_id);
-        titleBar.setText(getApplicationContext().getString(R.string.snake_menu_text));
+        displayToolbar();
+        getSupportActionBar().setTitle(R.string.snake_menu_text);
+        super.onCreate(savedInstanceState);
 
         int score = PreferenceManager.getDefaultSharedPreferences(this).getInt("score", 0);
 
@@ -104,4 +105,6 @@ public class SnakeMenu extends AppCompatActivity
         }
 
     }
+
+
 }
