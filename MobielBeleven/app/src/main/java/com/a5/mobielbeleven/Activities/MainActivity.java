@@ -1,9 +1,10 @@
 package com.a5.mobielbeleven.Activities;
 
-import java.awt.*;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -91,10 +92,10 @@ public class MainActivity extends AppCompatActivity {
         goButton.setOnClickListener(new AdapterView.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String id = "0";
+                String id = "1";
                 Intent intent = new Intent();
 
-                if (inRange) {
+                if (inRange && id != "0") {
                     switch (id) {
                         case "1":
                             intent = new Intent(getApplicationContext(), QR.class);
@@ -103,10 +104,14 @@ public class MainActivity extends AppCompatActivity {
                             intent = new Intent(getApplicationContext(), QR.class);
                             break;
                     }
+                    startActivity(intent);
                 } else {
-                    intent = new Intent(getApplicationContext(), QR.class);
+                    Snackbar snackbar = Snackbar
+                            .make(view, "no game avaible", Snackbar.LENGTH_LONG);
+
+                    snackbar.show();
                 }
-                startActivity(intent);
+
             }
         });
     }
