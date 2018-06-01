@@ -49,8 +49,14 @@
         </activity>
         <activity android:name=".Activities.Puzzle" />
         <activity android:name=".Activities.GalleryDetailedImage" />
-        <activity android:name=".Activities.Snake" />
-        <activity android:name=".Activities.SnakeMenu" />
+        <activity
+            android:name=".Activities.Snake"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.SnakeMenu"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.BaseToolbar"
             android:label="@string/title_activity_toolbar"
