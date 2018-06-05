@@ -10,7 +10,7 @@
     <include layout="@layout/activity_toolbar"
         android:id="@+id/toolbar"/>
 
-    <ImageView
+    <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/photo_detailed_image_id"
         android:layout_width="0dp"
         android:layout_height="0dp"

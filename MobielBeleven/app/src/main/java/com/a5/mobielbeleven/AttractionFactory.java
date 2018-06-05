@@ -116,7 +116,7 @@ public class AttractionFactory
                         "Een ieder die voet aan land zet, mag plaatsnemen in dit duizelingwekkend avontuur totdat ze de kannibaal om genade smeekt.",
                 "Giant cooking pots spin on a flickering fire on the island of Herr Kannibale spinning cauldrons. " +
                         "Everyone who sets foot on land may enter this dizzy adventure until they beg for mercy from the cannibal. ",
-                "herrkannibale",
+                "herr_kannibale",
                 "Raadsel",
                 "")
         );

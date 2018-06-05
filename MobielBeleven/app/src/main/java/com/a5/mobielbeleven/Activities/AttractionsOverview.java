@@ -1,34 +1,40 @@
 package com.a5.mobielbeleven.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.a5.mobielbeleven.Adapters.AttractionAdapter;
 import com.a5.mobielbeleven.Attraction;
 import com.a5.mobielbeleven.AttractionFactory;
 import com.a5.mobielbeleven.R;
 
-public class AttractionsOverview extends AppCompatActivity {
+public class AttractionsOverview extends BaseToolbar implements SearchView.OnQueryTextListener
+{
 
     ListView attractionList;
-    com.a5.mobielbeleven.Activities.AttractionAdapter attractionAdapter;
+    AttractionAdapter attractionAdapter;
+    SearchView searchView;
     private AttractionFactory af = AttractionFactory.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attractions_overview);
-
-        TextView titleBar = (TextView) findViewById(R.id.toolbar);
-        titleBar.setText(getApplicationContext().getString(R.string.attractions_button));
+        displayToolbar();
+        getSupportActionBar().setTitle(R.string.attractions_button);
+        super.onCreate(savedInstanceState);
 
         attractionList = (ListView) findViewById(R.id.attraction_list_1_id);
-        attractionAdapter = new com.a5.mobielbeleven.Activities.AttractionAdapter(this, af.getAttractions());
+        attractionAdapter = new AttractionAdapter(this, af.getAttractions());
         attractionList.setAdapter(attractionAdapter);
 
         attractionList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -45,5 +51,35 @@ public class AttractionsOverview extends AppCompatActivity {
             }
         });
 
+        searchView = findViewById(R.id.attraction_search_1_id);
+        searchView.setOnQueryTextListener(this);
+//        searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener()
+//        {
+//            @Override
+//            public void onFocusChange(View view, boolean b)
+//            {
+//                if(b){
+//                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//                    if(imm != null)
+//                        imm.showSoftInput(view.findFocus(), 0);
+//                }
+//            }
+//        });
+
     }
+
+    @Override
+    public boolean onQueryTextSubmit(String s)
+    {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s)
+    {
+        attractionAdapter.filter(s);
+        return false;
+    }
+
+
 }

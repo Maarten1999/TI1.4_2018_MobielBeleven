@@ -5,21 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange"
-    tools:context=".Activities.AttractionsOverview">
+    tools:context=".Activities.AttractionsOverview"
+    android:fitsSystemWindows="true">
 
     <include layout="@layout/activity_toolbar"
         android:id="@+id/toolbar"/>
-
-    <ListView
-        android:id="@+id/attraction_list_1_id"
-        android:layout_width="384dp"
-        android:layout_height="496dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/attraction_search_1_id" />
 
     <SearchView
         android:id="@+id/attraction_search_1_id"
@@ -28,13 +18,30 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:iconifiedByDefault="true"
+        android:iconifiedByDefault="false"
+        android:focusableInTouchMode="true"
+        android:focusable="false"
         android:inputType="text"
+        android:orientation="horizontal"
         android:queryHint="Search Here"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+    <requestFocus/>
+    </SearchView>
+
+    <ListView
+        android:id="@+id/attraction_list_1_id"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attraction_search_1_id" />
+
 
 
 </android.support.constraint.ConstraintLayout>

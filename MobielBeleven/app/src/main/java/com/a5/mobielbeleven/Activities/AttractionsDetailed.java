@@ -12,7 +12,7 @@ import com.a5.mobielbeleven.R;
 
 import org.w3c.dom.Text;
 
-public class AttractionsDetailed extends AppCompatActivity {
+public class AttractionsDetailed extends BaseToolbar {
 
     ImageView detailimage;
     TextView detailname;
@@ -21,14 +21,13 @@ public class AttractionsDetailed extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_attractions_detailed);
-
-        TextView titleBar = (TextView) findViewById(R.id.toolbar);
-        titleBar.setText(getApplicationContext().getString(R.string.attractions_button));
-
         Intent intent = getIntent();
         Attraction attraction = (Attraction) intent.getSerializableExtra("ATTRACTION_OBJECT");
+
+        setContentView(R.layout.activity_attractions_detailed);
+        displayToolbar();
+        getSupportActionBar().setTitle(attraction.getName());
+        super.onCreate(savedInstanceState);
 
         detailname = (TextView) findViewById(R.id.attraction_detail_txt_naam_id);
         detailname.setText(attraction.getName());
