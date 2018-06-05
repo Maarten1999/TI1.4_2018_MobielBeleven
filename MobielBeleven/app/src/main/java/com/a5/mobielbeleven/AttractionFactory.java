@@ -22,10 +22,10 @@ public class AttractionFactory
                         "Overleef de kronkelende bewegingen op grote hoogte in deze stalen achtbaan met dubbele looping en kurkentrekker.",
                 "Turn your world upside down and escape from the turning stranglehold of the cobra that's waiting for you. " +
                         "Survive the winding movements at great hights in this steel rollercoaster with double looping and a corkscrew.",
-                "cobra.jpg",
+                "cobra",
                 "Spelletje",
                 "Snake")
-                        );
+        );
         attractions.add(new Attraction(
                 "Pieter en de Slang",
                 "Achtbaan",
@@ -35,7 +35,7 @@ public class AttractionFactory
                 "Defeat the dragon that plagues the kingdom. " +
                         "All warriors will be challenged to pick one of the tracks to defeat the beast with 'Earth' or 'Air'. " +
                         "The one that succeeds the fastest, gets all the honor after a ride in this wooden rollercoaster.",
-                "pieter_deslang.jpg",
+                "pieter_deslang",
                 "Raadsel",
                 "")
         );
@@ -50,7 +50,7 @@ public class AttractionFactory
                         "Jokie and Jet take you on a journey to different countries! " +
                         "Discover various cultures and party along with all the red ears in the world. " +
                         "Discover the differences and similarities in Shrove Tuesday Festival.",
-                "vastenavond.jpg",
+                "vastenavond",
                 "Weetjes",
                 "")
         );
@@ -63,7 +63,7 @@ public class AttractionFactory
                 "In a country far, far away a wild river takes you along its waterfalls, rocks and totem poles. " +
                         "The rapids decide your route in this paddleless adventure. " +
                         "Try to defy this 3500 metres long wild water river. Will you manage to keep dry?",
-                "goudvis.jpg",
+                "goudvis",
                 "Spelletje",
                 "")
         );
@@ -80,7 +80,7 @@ public class AttractionFactory
                         "Spend some time on the water and behold varying Oriental scenes. " +
                         "A boat takes you through neighborhoods filled with poverty and riches. " +
                         "And a giant protects the most valuable possession of the sultal: his gems, silver candlesticks and pieces of gold.",
-                "fatmorgan.jpg",
+                "fatmorgan",
                 "Weetjes",
                 "")
         );
@@ -94,7 +94,7 @@ public class AttractionFactory
                 "In the eighteenth century, the Buckriders pillaged and set fires across the country. " +
                         "The leader of this pack of thieves, Hugo van den Loonsche Duynen, arrived at the Abbey of Poster after a long journey. " +
                         "His greed was fulfilled with everything he saw there. Nowhere else in the world he could ever find peace again. Not even in his own stately home.",
-                "villaampera.jpg",
+                "villaampera",
                 "Weetjes",
                 "")
         );
@@ -105,7 +105,7 @@ public class AttractionFactory
                         "In de bobsleebaan bibber je zelfs zonder sneeuw. De Henk is een 1524 m lange bobbaan en geschikt voor alle waaghalzen.",
                 "Want to fly at 60 km/h? Slam through corners and feel the wind in your face. No snow, but you still shake in the bobsleigh run. " +
                         "The Henk is a 1524 m long bobsleigh run and suitable for all daredevils. ",
-                "henkslee.jpg",
+                "henkslee",
                 "Spelletje",
                 "")
         );
@@ -116,7 +116,7 @@ public class AttractionFactory
                         "Een ieder die voet aan land zet, mag plaatsnemen in dit duizelingwekkend avontuur totdat ze de kannibaal om genade smeekt.",
                 "Giant cooking pots spin on a flickering fire on the island of Herr Kannibale spinning cauldrons. " +
                         "Everyone who sets foot on land may enter this dizzy adventure until they beg for mercy from the cannibal. ",
-                "herrkannibale.jpg",
+                "herrkannibale",
                 "Raadsel",
                 "")
         );
@@ -132,7 +132,7 @@ public class AttractionFactory
                         "meat, bread or fish, it was in fact biodegradable waste they preferred to gobble up. " +
                         "They made their favourite meal their profession and keep Essteling's enviroment clean and free from rubbish. " +
                         "You will hear them shout 'GFT-afval hier' whenever you pass by, so if you have any biodegradable waste with you during your visit, please stop by and feed them - they will thank you!",
-                "hongerigehans.jpg",
+                "hongerigehans",
                 "Raadsel",
                 "")
         );
@@ -144,7 +144,7 @@ public class AttractionFactory
                 "The Vogel Blues takes you on an high speed adventure. " +
                         "In its talons you’ll experience a terrifying flight in the dark passing serpents galore until this bird of prey, " +
                         "with the strength of a hundred lions, reaches its nest. You'll feel like Sinbad the Sailor on one of his adventures!",
-                "vogelblues.jpg",
+                "vogelblues",
                 "Spelletje",
                 "")
         );
@@ -157,8 +157,8 @@ public class AttractionFactory
 
         return instance;
     }
-    
-    public ArrayList<Attraction> getFurbies()
+
+    public ArrayList<Attraction> getAttractions()
     {
         return attractions;
     }

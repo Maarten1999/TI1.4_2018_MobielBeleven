@@ -13,7 +13,7 @@
     <ListView
         android:id="@+id/attraction_list_1_id"
         android:layout_width="384dp"
-        android:layout_height="444dp"
+        android:layout_height="496dp"
         android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
