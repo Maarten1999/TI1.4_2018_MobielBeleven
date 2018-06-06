@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MobielBeleven</string>
     <string name="go_button">Go</string>
-    <string name="QR_button">QR</string>
+    <string name="QR_button">Scannen</string>
     <string name="attractions_button">Attracties</string>
     <string name="map_button">Plattegrond</string>
     <string name="gallery_button">Foto\'s</string>

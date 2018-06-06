@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">MobileExperience</string>
     <string name="go_button">Go</string>
-    <string name="QR_button">QR</string>
+    <string name="QR_button">Scan</string>
     <string name="attractions_button">Rides</string>
     <string name="map_button">Map</string>
     <string name="gallery_button">Gallery</string>
@@ -14,5 +14,6 @@
     <string name="new_game">New Game</string>
     <string name="snake_menu_button_improve">Improve</string>
     <string name="puzzle_text">Puzzle</string>
+    <string name="title_activity_toolbar">Toolbar</string>
 
 </resources>
