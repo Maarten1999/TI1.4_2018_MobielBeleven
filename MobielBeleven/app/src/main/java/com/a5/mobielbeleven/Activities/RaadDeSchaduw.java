@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -21,15 +22,16 @@ public class RaadDeSchaduw extends BaseToolbar {
     private RadioButton knop1;
     private int correct;
     private int wrong;
+    private ImageView iv;
 
     RadioGroup radio;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raad_de_schaduw);
         displayToolbar();
         getSupportActionBar().setTitle(R.string.raad_de_schaduw_titel);
-        super.onCreate(savedInstanceState);
-
+        iv = (ImageView) findViewById(R.id.raadDeSchaduwImageId);
 
         raadDeSchaduwSelecteren();
     }
@@ -46,6 +48,7 @@ public class RaadDeSchaduw extends BaseToolbar {
     }
 
     public void firstTest(){
+        iv.setImageResource(R.drawable.pardoes);
         radio = findViewById(R.id.raadDeSchaduwRadioGroupId);
         knop1 = findViewById(R.id.raadDeSchaduwEersteAntId);
         knop1.setText("Pardoes");
@@ -68,6 +71,7 @@ public class RaadDeSchaduw extends BaseToolbar {
     }
 
     public void secondTest(){
+        iv.setImageResource(R.drawable.langejan);
         radio = findViewById(R.id.raadDeSchaduwRadioGroupId);
         knop1 = findViewById(R.id.raadDeSchaduwEersteAntId);
         knop1.setText("Winnie de poo");

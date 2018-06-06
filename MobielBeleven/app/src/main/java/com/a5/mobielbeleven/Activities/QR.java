@@ -2,6 +2,7 @@ package com.a5.mobielbeleven.Activities;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Vibrator;
 import android.support.annotation.NonNull;
@@ -112,8 +113,56 @@ public class QR extends BaseToolbar {
                 {
                     Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                     vibrator.vibrate(1000);
+
+                    //Uitlezen codes
+                    String qrValue = qrcodes.valueAt(0).displayValue;
+
+                    switch(qrValue){
+                        case "snake": runSnake();
+                            break;
+                        case "puzzle": runPuzzle();
+                            break;
+                        case "shadow": runShadow();
+                        break;
+                    }
+
                 }
             }
         });
+
     }
+    public void runSnake(){
+        cameraPreview.post(new Runnable() {
+            @Override
+            public void run() {
+                cameraSource.stop();
+            }
+        });
+        Intent intent = new Intent(getApplicationContext(), SnakeMenu.class);
+        startActivity(intent);
+        finish();
+    }
+    public void runPuzzle(){
+        cameraPreview.post(new Runnable() {
+            @Override
+            public void run() {
+                cameraSource.stop();
+            }
+        });
+        Intent intent = new Intent(getApplicationContext(), Puzzle.class);
+        startActivity(intent);
+        finish();
+    }
+    public void runShadow(){
+        cameraPreview.post(new Runnable() {
+            @Override
+            public void run() {
+                cameraSource.stop();
+            }
+        });
+        Intent intent = new Intent(getApplicationContext(), RaadDeSchaduw.class);
+        startActivity(intent);
+        finish();
+    }
+
 }
