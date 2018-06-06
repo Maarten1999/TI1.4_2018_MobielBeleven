@@ -23,8 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".Activities.AttractionsOverview"
             android:configChanges="orientation"
@@ -48,9 +46,7 @@
         <activity
             android:name=".Activities.Map"
             android:configChanges="orientation"
-            android:screenOrientation="portrait">
-            >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity android:name=".Activities.Puzzle" />
         <activity android:name=".Activities.GalleryDetailedImage" />
         <activity
@@ -64,12 +60,14 @@
         <activity
             android:name=".Activities.BaseToolbar"
             android:label="@string/title_activity_toolbar"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode"
             tools:replace="android:value" />
+
+        <activity android:name=".Activities.Help"></activity>
     </application>
 
 </manifest>

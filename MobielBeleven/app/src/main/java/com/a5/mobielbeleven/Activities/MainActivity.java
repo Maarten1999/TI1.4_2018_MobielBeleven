@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -114,6 +116,18 @@ public class MainActivity extends AppCompatActivity {
                     snackbar.show();
                 }
 
+            }
+        });
+
+        ImageButton helpButton = findViewById(R.id.home_bttn_help_id);
+        helpButton.setOnClickListener(new AdapterView.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(),
+                        Help.class
+                );
+                startActivity(intent);
             }
         });
     }

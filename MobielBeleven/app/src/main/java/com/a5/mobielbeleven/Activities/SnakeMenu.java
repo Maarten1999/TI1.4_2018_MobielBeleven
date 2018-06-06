@@ -9,8 +9,10 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.InputFilter;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -93,6 +95,8 @@ public class SnakeMenu extends BaseToolbar
             scoreBoard.setText(String.valueOf(newScore));
             sendButton.setVisibility(Button.VISIBLE);
             newGameButton.setText(R.string.snake_menu_button_improve);
+            sendButton.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shaking));
+
         } else {
             Toast.makeText(getApplicationContext(),
                     "Highscore niet verbeterd", Toast.LENGTH_LONG).show();
@@ -121,6 +125,7 @@ public class SnakeMenu extends BaseToolbar
 
         final EditText input = new EditText(this);
         input.setInputType(TYPE_TEXT_VARIATION_PERSON_NAME);
+        input.setFilters(new InputFilter[]{new InputFilter.LengthFilter(10)});
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT);

@@ -10,11 +10,14 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.TextView;
 
+import com.a5.mobielbeleven.Attraction;
+import com.a5.mobielbeleven.AttractionFactory;
 import com.a5.mobielbeleven.R;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
@@ -22,12 +25,14 @@ import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
+import java.util.Locale;
 
 public class QR extends BaseToolbar {
 
     private SurfaceView cameraPreview;
     BarcodeDetector barcodeDetector;
     private CameraSource cameraSource;
+    private AttractionFactory attractionFactory;
 
     final int RequestCameraPermissionID = 1001;
 
@@ -63,6 +68,7 @@ public class QR extends BaseToolbar {
         getSupportActionBar().setTitle(R.string.QR_button);
         super.onCreate(savedInstanceState);
 
+        attractionFactory = AttractionFactory.getInstance();
         cameraPreview = (SurfaceView) findViewById(R.id.qr_Code_ID);
 
         barcodeDetector = new BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.QR_CODE).build();
@@ -111,8 +117,8 @@ public class QR extends BaseToolbar {
                 SparseArray<Barcode> qrcodes = detections.getDetectedItems();
                 if(qrcodes.size() != 0)
                 {
-                    Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
-                    vibrator.vibrate(1000);
+
+                    Log.i("test", qrcodes.valueAt(0).displayValue);
 
                     //Uitlezen codes
                     String qrValue = qrcodes.valueAt(0).displayValue;
@@ -125,7 +131,8 @@ public class QR extends BaseToolbar {
                         case "shadow": runShadow();
                         break;
                     }
-
+                    Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(1000);
                 }
             }
         });
@@ -142,6 +149,7 @@ public class QR extends BaseToolbar {
         startActivity(intent);
         finish();
     }
+
     public void runPuzzle(){
         cameraPreview.post(new Runnable() {
             @Override
@@ -153,6 +161,7 @@ public class QR extends BaseToolbar {
         startActivity(intent);
         finish();
     }
+
     public void runShadow(){
         cameraPreview.post(new Runnable() {
             @Override

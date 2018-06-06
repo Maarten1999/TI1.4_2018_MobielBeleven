@@ -6,7 +6,7 @@
     <string name="attractions_button">Rides</string>
     <string name="map_button">Map</string>
     <string name="gallery_button">Gallery</string>
-    <string name="QR_Text">Scan the QR-code at the start of the ride.</string>
+    <string name="QR_Text">Scan the QR-code at the start of the ride, by pointing the camera towards the code.</string>
     <string name="photo_titlebar_text">Photo</string>
     <string name="raad_de_schaduw_titel">Guess the shadow</string>
     <string name="snake_menu_text">Snake Menu</string>
@@ -15,5 +15,7 @@
     <string name="snake_menu_button_improve">Improve</string>
     <string name="puzzle_text">Puzzle</string>
     <string name="title_activity_toolbar">Toolbar</string>
+    <string name="help_title">Help</string>
+    <string name="help_info">No longer getting bored in the queue for an attraction, that\'s why you use this app. When you join a queue, a game or a puzzle is released. You can navigate to it by pressing the Go button. It is also possible to navigate to the game or puzzle by going to the QR function. Scan with the camera the QR code, which hangs at the start of each queue. Have Fun!</string>
 
 </resources>
