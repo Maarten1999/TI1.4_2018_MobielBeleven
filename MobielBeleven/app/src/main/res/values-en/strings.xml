@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">MobileExperience</string>
     <string name="go_button">Go</string>
-    <string name="QR_button">Scan</string>
+    <string name="QR_button">Scanner</string>
     <string name="attractions_button">Rides</string>
     <string name="map_button">Map</string>
     <string name="gallery_button">Gallery</string>
