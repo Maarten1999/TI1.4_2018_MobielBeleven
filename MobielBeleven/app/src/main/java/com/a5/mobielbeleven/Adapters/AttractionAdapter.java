@@ -43,16 +43,16 @@ public class AttractionAdapter extends ArrayAdapter<Attraction> {
         );
         imagerow.setImageResource(resId);
 
-        imagerow.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Intent image = new Intent(parent.getContext(), GalleryDetailedImage.class);
-                image.putExtra("PHOTO_OBJECT", attraction.getImage());
-                parent.getContext().startActivity(image);
-            }
-        });
+//        imagerow.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View view)
+//            {
+//                Intent image = new Intent(parent.getContext(), GalleryDetailedImage.class);
+//                image.putExtra("PHOTO_OBJECT", attraction.getImage());
+//                parent.getContext().startActivity(image);
+//            }
+//        });
         return convertView;
     }
 

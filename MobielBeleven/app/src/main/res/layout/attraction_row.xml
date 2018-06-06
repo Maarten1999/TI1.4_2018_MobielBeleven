@@ -22,8 +22,7 @@
         app:layout_constraintHorizontal_bias="0.029"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:focusable="false"
-        android:onClick=""/>
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/detail_row_txt_id"

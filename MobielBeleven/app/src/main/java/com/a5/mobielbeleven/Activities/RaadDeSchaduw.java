@@ -30,6 +30,7 @@ public class RaadDeSchaduw extends BaseToolbar {
         getSupportActionBar().setTitle(R.string.raad_de_schaduw_titel);
         super.onCreate(savedInstanceState);
 
+
         raadDeSchaduwSelecteren();
     }
 

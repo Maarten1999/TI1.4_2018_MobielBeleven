@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,7 +23,7 @@ public class AttractionsDetailed extends BaseToolbar {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
-        Attraction attraction = (Attraction) intent.getSerializableExtra("ATTRACTION_OBJECT");
+        final Attraction attraction = (Attraction) intent.getSerializableExtra("ATTRACTION_OBJECT");
 
         setContentView(R.layout.activity_attractions_detailed);
         displayToolbar();
@@ -39,6 +40,17 @@ public class AttractionsDetailed extends BaseToolbar {
                 this.getPackageName()
         );
         detailimage.setImageResource(resId);
+
+        detailimage.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent image = new Intent(getApplicationContext(), GalleryDetailedImage.class);
+                image.putExtra("PHOTO_OBJECT", attraction.getImage());
+                startActivity(image);
+            }
+        });
 
         detailtype = (TextView)findViewById(R.id.attraction_detail_type_id);
         detailtype.setText(attraction.getType());

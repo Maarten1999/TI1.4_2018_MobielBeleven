@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/grass_background_2"
     tools:context=".Activities.SnakeMenu"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
     <include layout="@layout/activity_toolbar"
         android:id="@+id/toolbar"/>

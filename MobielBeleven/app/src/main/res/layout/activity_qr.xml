@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange"
-    tools:context=".Activities.QR">
+    tools:context=".Activities.QR"
+    android:fitsSystemWindows="true">
 
     <include layout="@layout/activity_toolbar"
         android:id="@+id/toolbar"/>
