@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(),
+                        //QR.class
                         QR.class
                 );
                 startActivity(intent);

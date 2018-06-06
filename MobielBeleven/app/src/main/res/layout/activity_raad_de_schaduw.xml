@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    tools:context=".Activities.RaadDeSchaduw">
+
+    <include
+        android:id="@+id/titlebar"
+        layout="@layout/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/raadDeSchaduwImageId"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="128dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/holo_purple" />
+
+    <TextView
+        android:id="@+id/raadDeSchaduwVraagId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:text="Wie is dit figuur?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/raadDeSchaduwImageId" />
+
+    <RadioGroup
+        android:id="@+id/raadDeSchaduwRadioGroupId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/raadDeSchaduwVraagId">
+
+        <RadioButton
+            android:id="@+id/raadDeSchaduwEersteAntId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:text="Pardoes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/raadDeSchaduwVraagId" />
+
+        <RadioButton
+            android:id="@+id/raadDeSchaduwDerdeAntId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="Spongebob"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/raadDeSchaduwTweedeAntId" />
+
+        <RadioButton
+            android:id="@+id/raadDeSchaduwVierdeAntId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="Pickachu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/raadDeSchaduwDerdeAntId" />
+
+        <RadioButton
+            android:id="@+id/raadDeSchaduwTweedeAntId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="Mickey Mouse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/raadDeSchaduwEersteAntId" />
+
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>
