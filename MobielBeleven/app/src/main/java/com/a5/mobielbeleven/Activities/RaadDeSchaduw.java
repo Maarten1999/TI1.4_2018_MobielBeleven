@@ -16,7 +16,7 @@ import com.a5.mobielbeleven.R;
 
 import static android.icu.lang.UProperty.MATH;
 
-public class RaadDeSchaduw extends AppCompatActivity {
+public class RaadDeSchaduw extends BaseToolbar {
     private int schaduw;
     private RadioButton knop1;
     private int correct;
@@ -25,11 +25,10 @@ public class RaadDeSchaduw extends AppCompatActivity {
     RadioGroup radio;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raad_de_schaduw);
-
-        TextView titleBar = (TextView) findViewById(R.id.titlebar_txt_1_id);
-        titleBar.setText(getApplicationContext().getString(R.string.raad_de_schaduw_titel));
+        displayToolbar();
+        getSupportActionBar().setTitle(R.string.raad_de_schaduw_titel);
+        super.onCreate(savedInstanceState);
 
         raadDeSchaduwSelecteren();
     }

@@ -49,6 +49,7 @@
         </activity>
         <activity android:name=".Activities.Puzzle" />
         <activity android:name=".Activities.GalleryDetailedImage" />
+        <activity android:name=".Activities.RaadDeSchaduw" />
         <activity
             android:name=".Activities.Snake"
             android:configChanges="orientation"

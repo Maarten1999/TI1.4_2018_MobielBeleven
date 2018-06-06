@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                             intent = new Intent(getApplicationContext(), Puzzle.class);
                             break;
                         case "2":
-                            intent = new Intent(getApplicationContext(), QR.class);
+                            intent = new Intent(getApplicationContext(), RaadDeSchaduw.class);
                             break;
                         case "3":
                             intent = new Intent(getApplicationContext(), SnakeMenu.class);
