@@ -13,7 +13,7 @@ import com.a5.mobielbeleven.R;
 
 import org.w3c.dom.Text;
 
-public class AttractionsDetailed extends BaseToolbar {
+public class AttractionsDetailed extends BaseToolbar  {
 
     ImageView detailimage;
     TextView detailname;

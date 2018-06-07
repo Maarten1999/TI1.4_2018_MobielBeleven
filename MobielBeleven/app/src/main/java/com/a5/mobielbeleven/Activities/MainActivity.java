@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initNavigationButtons() {
         goButton = findViewById(R.id.home_bttn_go_id);
+
         Button QRButton = findViewById(R.id.home_bttn_1_id);
         QRButton.setOnClickListener(new AdapterView.OnClickListener() {
             @Override
