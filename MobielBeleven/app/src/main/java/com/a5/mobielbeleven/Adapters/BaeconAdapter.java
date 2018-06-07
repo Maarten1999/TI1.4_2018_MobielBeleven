@@ -1,9 +1,13 @@
 package com.a5.mobielbeleven.Adapters;
 
 import android.app.Activity;
-import android.os.RemoteException;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.wifi.ScanResult;
+import android.net.wifi.WifiManager;
 import android.util.Log;
-
 import org.altbeacon.beacon.Beacon;
 import org.altbeacon.beacon.BeaconConsumer;
 import org.altbeacon.beacon.BeaconManager;
@@ -11,50 +15,115 @@ import org.altbeacon.beacon.BeaconParser;
 import org.altbeacon.beacon.RangeNotifier;
 import org.altbeacon.beacon.Region;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 
-public class BaeconAdapter extends Activity implements BeaconConsumer, RangeNotifier {
+public class BaeconAdapter {
     private static final String TAG = BaeconAdapter.class.getSimpleName();
     private boolean bool;
-    private BeaconManager beaconManager;
+    private String ssid;
+    private ArrayList<String> ssidl;
+    WifiManager mWifiManager;
+    List<ScanResult> wifiList;
 
+
+
+    public BaeconAdapter(Context con)
+    {
+
+        ssidl = new ArrayList<String>();
+        mWifiManager = (WifiManager) con.getSystemService(Context.WIFI_SERVICE);
+        con.registerReceiver(mWifiScanReceiver,
+                new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+        if(mWifiManager.isWifiEnabled()==false)
+        {
+            mWifiManager.setWifiEnabled(true);
+        }
+        mWifiManager.startScan();
+    }
+
+    private final BroadcastReceiver mWifiScanReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context c, Intent intent) {
+            if (intent.getAction().equals(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION)) {
+                wifiList = mWifiManager.getScanResults();
+                boolean bl = mWifiManager.getScanResults().isEmpty();
+                didRangeBeaconsInRegion();
+            }
+        }
+    };
 
     protected void onCreate()
     {
-        beaconManager = BeaconManager.getInstanceForApplication(this);
-        beaconManager.getBeaconParsers().clear();
-        beaconManager.getBeaconParsers().add(new BeaconParser("iBeacon").setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24"));
-        beaconManager.bind(this);
+
+//        beaconManager = BeaconManager.getInstanceForApplication(this);
+//        beaconManager.getBeaconParsers().clear();
+//        beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24"));
+//        beaconManager.bind(this);
     }
 
-    public void onBeaconServiceConnect(){
-        Log.d(TAG, "Beacon service connected.  Starting ranging.");
 
-        try {
-            beaconManager.startRangingBeaconsInRegion(new Region("allbeacons", null, null, null));
-            beaconManager.addRangeNotifier(this);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+
+    public void scan()
+    {
+        mWifiManager.startScan();
     }
 
-    public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
-        if (!beacons.isEmpty())
+//    public void onBeaconServiceConnect(){
+//        Log.d(TAG, "Beacon service connected.  Starting ranging.");
+//
+//        try {
+//            beaconManager.startRangingBeaconsInRegion(new Region("allbeacons", null, null, null));
+//            beaconManager.addRangeNotifier(this);
+//        } catch (RemoteException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+    public void didRangeBeaconsInRegion() {
+        if (!wifiList.isEmpty())
         {
-            bool = true;
+            for (ScanResult beacon: wifiList) {
+
+                switch (beacon.SSID)
+                {
+                    case "beacon":
+                        ssidl.add(beacon.SSID);
+                        break;
+
+                    default:
+                        ssid = "0";
+                        break;
+                }
+
+            }
+            if(!ssidl.isEmpty())
+            {
+                ssid = ssidl.get(0);
+                bool = true;
+            }
+            else
+            {
+                bool = false;
+            }
+
         }
         else
         {
             bool = false;
         }
-        for (Beacon beacon: beacons) {
-        Log.d(TAG, "Detected beacon: "+beacon);
+
     }
-    }
+
     public boolean getInRange()
     {
-
         return bool;
+    }
+
+    public String getssid()
+    {
+        return ssid;
     }
 }

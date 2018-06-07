@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     Boolean inRange = false;
     TimerTask task;
     BaeconAdapter beacon;
+    String ssid;
     final Handler handler_interact = new Handler();
 
     @Override
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        beacon = new BaeconAdapter();
+        beacon = new BaeconAdapter(getApplicationContext());
 
         initNavigationButtons();
 
@@ -139,12 +140,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //TODO: een methode maken in de sensor adapter voor het zetten van inrange
+                beacon.scan();
                 inRange = beacon.getInRange();
+                ssid = beacon.getssid();
                 updateButton();
 
             }
         };
-        timer.schedule(task, 0, 1000);
+        timer.schedule(task, 0, 10000);
 
     }
 
