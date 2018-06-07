@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/orange"
     tools:context=".Activities.Puzzle"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="false">
 
     <include layout="@layout/activity_toolbar"
         android:id="@+id/toolbar"/>
@@ -48,7 +48,7 @@
         android:layout_marginBottom="148dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="Button"
+        android:text="@string/puzzle_check"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

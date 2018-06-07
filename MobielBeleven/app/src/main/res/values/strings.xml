@@ -16,6 +16,8 @@
     <string name="title_activity_toolbar">Toolbar</string>
     <string name="help_title">Help</string>
     <string name="help_info">Niet meer vervelen in de wachtrij, daarvoor gebruik je deze app. Als in de wachtrij aansluit komt er een spelletje of een raadsel vrij. Je kunt ernaartoe door op de Ga knop te klikken. Je kan het raadsel of het spelletje ook doen door naar de QR functie te gaan. Scan met de camera de QR code die aan het begin van iedere wachtrij hangt. Veel Plezier!</string>
+    <string name="puzzle_check">Check</string>
+    <string name="guess_shadow_question">Wie is dit figuur?</string>
 
 
 </resources>

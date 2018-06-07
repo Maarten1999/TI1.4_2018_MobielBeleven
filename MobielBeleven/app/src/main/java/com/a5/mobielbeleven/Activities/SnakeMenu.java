@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.InputFilter;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -95,8 +96,6 @@ public class SnakeMenu extends BaseToolbar
             scoreBoard.setText(String.valueOf(newScore));
             sendButton.setVisibility(Button.VISIBLE);
             newGameButton.setText(R.string.snake_menu_button_improve);
-            sendButton.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shaking));
-
         } else {
             Toast.makeText(getApplicationContext(),
                     "Highscore niet verbeterd", Toast.LENGTH_LONG).show();

@@ -6,12 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".Activities.Snake"
     android:orientation="vertical"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="false">
 
     <com.a5.mobielbeleven.Snake.views.SnakeView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/snakeView"
         android:background="@drawable/grass_background_2"/>
+
+    <TextView
+        android:id="@+id/snakeview_score_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:fitsSystemWindows="true"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

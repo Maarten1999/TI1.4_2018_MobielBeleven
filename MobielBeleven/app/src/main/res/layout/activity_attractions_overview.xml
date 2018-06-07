@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/orange"
     tools:context=".Activities.AttractionsOverview"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="false">
 
     <include layout="@layout/activity_toolbar"
         android:id="@+id/toolbar"/>
@@ -41,7 +41,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/attraction_search_1_id" />
-
-
 
 </android.support.constraint.ConstraintLayout>

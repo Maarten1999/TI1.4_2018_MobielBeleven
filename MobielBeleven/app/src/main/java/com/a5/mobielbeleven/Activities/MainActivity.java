@@ -1,6 +1,7 @@
 package com.a5.mobielbeleven.Activities;
 
 import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TimerTask task;
     BaeconAdapter beacon;
     final Handler handler_interact = new Handler();
+    WifiManager mWifiManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         initNavigationButtons();
 
         gOTimer();
-
 
     }
 

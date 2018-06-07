@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.a5.mobielbeleven.R;
@@ -20,6 +21,7 @@ public class Snake extends AppCompatActivity implements View.OnTouchListener
 {
     private GameEngine gameEngine;
     private SnakeView snakeView;
+    private TextView scoreText;
     private final Handler handler = new Handler();
     private long updateDelay = 125;
 
@@ -37,6 +39,9 @@ public class Snake extends AppCompatActivity implements View.OnTouchListener
         snakeView = (SnakeView) findViewById(R.id.snakeView);
         snakeView.setOnTouchListener(this);
 
+        scoreText = findViewById(R.id.snakeview_score_text_id);
+        scoreText.setText(String.valueOf(gameEngine.getScore()));
+
         startUpdateHandler();
     }
 
@@ -48,6 +53,7 @@ public class Snake extends AppCompatActivity implements View.OnTouchListener
             public void run()
             {
                 gameEngine.update();
+                scoreText.setText(String.valueOf(gameEngine.getScore()));
 
                 if (gameEngine.getCurrentGameState() == GameState.RUNNING) {
                     handler.postDelayed(this, updateDelay);
