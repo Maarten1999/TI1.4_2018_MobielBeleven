@@ -62,9 +62,19 @@ public class BaeconAdapter {
 
 
     public void scan()
+
     {
+        if(wifiList != null)
+        {
+            wifiList.clear();
+        }
+        if(ssidl != null)
+        {
+            ssidl.clear();
+        }
         mWifiManager.startScan();
     }
+
 
 //    public void onBeaconServiceConnect(){
 //        Log.d(TAG, "Beacon service connected.  Starting ranging.");
