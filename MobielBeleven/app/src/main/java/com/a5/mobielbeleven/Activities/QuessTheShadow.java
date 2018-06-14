@@ -13,11 +13,19 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.a5.mobielbeleven.MQTT.MQTTConfig;
+import com.a5.mobielbeleven.MQTT.MqttMessageService;
+import com.a5.mobielbeleven.MQTT.PahoMqttClient;
 import com.a5.mobielbeleven.R;
+
+import org.eclipse.paho.android.service.MqttAndroidClient;
+import org.eclipse.paho.client.mqttv3.MqttException;
+
+import java.io.UnsupportedEncodingException;
 
 import static android.icu.lang.UProperty.MATH;
 
-public class RaadDeSchaduw extends BaseToolbar {
+public class QuessTheShadow extends BaseToolbar {
     private int schaduw;
     private RadioButton knop1;
     private int correct;
@@ -25,12 +33,32 @@ public class RaadDeSchaduw extends BaseToolbar {
     private ImageView iv;
 
     RadioGroup radio;
+
+    private final String topic = "TI142018/A5/SHADOW";
+    private MqttAndroidClient client;
+    private PahoMqttClient pahoMqttClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raad_de_schaduw);
         displayToolbar();
         getSupportActionBar().setTitle(R.string.raad_de_schaduw_titel);
+
+        pahoMqttClient = new PahoMqttClient();
+
+        client = pahoMqttClient.getMqttClient(
+                getApplicationContext(),
+                MQTTConfig.getInstance().MQTT_BROKER_URL(),
+                MQTTConfig.getInstance().CLIENT_ID());
+
+        try {
+            Intent intent = new Intent(QuessTheShadow.this, MqttMessageService.class);
+            startService(intent);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
         iv = (ImageView) findViewById(R.id.raadDeSchaduwImageId);
 
         raadDeSchaduwSelecteren();
@@ -94,12 +122,18 @@ public class RaadDeSchaduw extends BaseToolbar {
     }
 
     public void victory(View view){
-        Snackbar snackbar = Snackbar
-                .make(view,"Het antwoord is goed.", Snackbar.LENGTH_LONG);
-
-        snackbar.show();
+        Snackbar.make(view,"Het antwoord is goed.", Snackbar.LENGTH_LONG).show();
 
         correct = correct + 1;
+
+        MQTTConfig.getInstance().setMQTT_TOPIC(topic);
+        try {
+            pahoMqttClient.publishMessage(client,"{\"answer\":\"GOED\"}",0,MQTTConfig.getInstance().PUBLISH_TOPIC());
+        } catch (MqttException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -114,12 +148,18 @@ public class RaadDeSchaduw extends BaseToolbar {
     }
 
     public void lose(View view){
-        Snackbar snackbar = Snackbar
-                .make(view,"Het antwoord is fout.", Snackbar.LENGTH_LONG);
-
-        snackbar.show();
+        Snackbar.make(view,"Het antwoord is fout.", Snackbar.LENGTH_LONG).show();
 
         wrong = wrong+1;
+
+        MQTTConfig.getInstance().setMQTT_TOPIC(topic);
+        try {
+            pahoMqttClient.publishMessage(client,"{\"answer\":\"FOUT\"}",0,MQTTConfig.getInstance().PUBLISH_TOPIC());
+        } catch (MqttException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
         new Handler().postDelayed(new Runnable() {
             @Override

@@ -7,16 +7,12 @@ import android.content.pm.PackageManager;
 import android.os.Vibrator;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.widget.TextView;
 
-import com.a5.mobielbeleven.Attraction;
 import com.a5.mobielbeleven.AttractionFactory;
 import com.a5.mobielbeleven.R;
 import com.google.android.gms.vision.CameraSource;
@@ -25,7 +21,6 @@ import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
-import java.util.Locale;
 
 public class QR extends BaseToolbar {
 
@@ -169,7 +164,7 @@ public class QR extends BaseToolbar {
                 cameraSource.stop();
             }
         });
-        Intent intent = new Intent(getApplicationContext(), RaadDeSchaduw.class);
+        Intent intent = new Intent(getApplicationContext(), QuessTheShadow.class);
         startActivity(intent);
         finish();
     }

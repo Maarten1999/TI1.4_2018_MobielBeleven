@@ -2,6 +2,7 @@ package com.a5.mobielbeleven.Activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,7 +22,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.a5.mobielbeleven.MQTT.MQTTConfig;
+import com.a5.mobielbeleven.MQTT.MqttMessageService;
+import com.a5.mobielbeleven.MQTT.PahoMqttClient;
 import com.a5.mobielbeleven.R;
+
+import org.eclipse.paho.android.service.MqttAndroidClient;
+import org.eclipse.paho.client.mqttv3.MqttException;
+
+import java.io.UnsupportedEncodingException;
 
 import static android.text.InputType.TYPE_CLASS_TEXT;
 import static android.text.InputType.TYPE_TEXT_VARIATION_PERSON_NAME;
@@ -31,6 +40,10 @@ public class SnakeMenu extends BaseToolbar
     private TextView scoreBoard;
     Button sendButton, newGameButton;
     private final int SNAKE_GAME_SCORE = 0;
+
+    private final String topic = "TI142018/A5/SCORES";
+    private MqttAndroidClient client;
+    private PahoMqttClient pahoMqttClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -66,12 +79,25 @@ public class SnakeMenu extends BaseToolbar
             @Override
             public void onClick(View view)
             {
-                askForName();
+                askForName(getApplicationContext());
             }
         });
 
         checkScore();
 
+        pahoMqttClient = new PahoMqttClient();
+
+        client = pahoMqttClient.getMqttClient(
+                getApplicationContext(),
+                MQTTConfig.getInstance().MQTT_BROKER_URL(),
+                MQTTConfig.getInstance().CLIENT_ID());
+
+        try {
+            Intent intent = new Intent(SnakeMenu.this, MqttMessageService.class);
+            startService(intent);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -96,9 +122,9 @@ public class SnakeMenu extends BaseToolbar
             scoreBoard.setText(String.valueOf(newScore));
             sendButton.setVisibility(Button.VISIBLE);
             newGameButton.setText(R.string.snake_menu_button_improve);
-        } else {
-            Toast.makeText(getApplicationContext(),
-                    "Highscore niet verbeterd", Toast.LENGTH_LONG).show();
+//        } else {
+//            Toast.makeText(getApplicationContext(),
+//                    "Highscore niet verbeterd", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -116,7 +142,7 @@ public class SnakeMenu extends BaseToolbar
     }
 
 
-    private void askForName()
+    private void askForName(final Context context)
     {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(SnakeMenu.this);
         alertDialog.setTitle("Enter a Name");
@@ -139,9 +165,18 @@ public class SnakeMenu extends BaseToolbar
                 {
                     public void onClick(DialogInterface dialog, int which)
                     {
+                        MQTTConfig.getInstance().setMQTT_TOPIC(topic);
                         String name = input.getText().toString();
-                        Toast.makeText(getApplicationContext(),
-                                name, Toast.LENGTH_SHORT).show();
+                        String score = String.valueOf(PreferenceManager.getDefaultSharedPreferences(context).getInt("score", 0));
+                        String msg = "{\"name\":\"" + name +"\",\"score\":" + score + "}";
+                        try {
+                            pahoMqttClient.publishMessage(client, msg, 0, MQTTConfig.getInstance().PUBLISH_TOPIC());
+                            Toast.makeText(context, context.getResources().getString(R.string.snake_menu_score_sent), Toast.LENGTH_LONG);
+                        } catch (MqttException e) {
+                            e.printStackTrace();
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
 
