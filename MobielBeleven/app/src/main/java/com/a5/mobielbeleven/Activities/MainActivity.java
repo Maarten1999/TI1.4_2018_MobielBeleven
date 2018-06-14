@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +13,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -98,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        // code voor de go button.
         goButton.setOnClickListener(new AdapterView.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // timer voor het scannen voor beacons
     public void gOTimer() {
 
         task = new TimerTask() {
@@ -158,6 +159,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    // code voor het veranderen vsan de go button
     private void updateButton() {
         handler_interact.post(runnable_interact);
     }
@@ -174,6 +177,8 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
+
+    // request pop up voor premisie voor gps
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case 1: {
