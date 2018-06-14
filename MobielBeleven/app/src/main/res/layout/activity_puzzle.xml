@@ -52,7 +52,6 @@
         android:layout_marginStart="8dp"
         android:text="@string/puzzle_check"
         android:background="#c0a21829"
-        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
