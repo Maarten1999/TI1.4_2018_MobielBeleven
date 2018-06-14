@@ -95,7 +95,7 @@ public class AttractionFactory
                         "The leader of this pack of thieves, Hugo van den Loonsche Duynen, arrived at the Abbey of Poster after a long journey. " +
                         "His greed was fulfilled with everything he saw there. Nowhere else in the world he could ever find peace again. Not even in his own stately home.",
                 "villaampera",
-                "Weetjes",
+                "Raadsel",
                 "")
         );
         attractions.add(new Attraction(
