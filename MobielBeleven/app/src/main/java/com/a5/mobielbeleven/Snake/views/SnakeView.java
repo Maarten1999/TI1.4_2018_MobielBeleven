@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -46,13 +47,13 @@ public class SnakeView extends View
                             mPaint.setColor(getResources().getColor(R.color.background_view_color));
                             break;
                         case WALL:
-                            mPaint.setColor(Color.GREEN);
+                            mPaint.setColor(Color.YELLOW);
                             break;
                         case SNAKEHEAD:
-                            mPaint.setColor(Color.RED);
+                            mPaint.setColor(Color.rgb(6,92,0));
                             break;
                         case SNAKETAIL:
-                            mPaint.setColor(getResources().getColor(R.color.orange));
+                            mPaint.setColor(Color.rgb(16,224,0));
                             break;
                         case APPLE:
                             mPaint.setColor(Color.RED);

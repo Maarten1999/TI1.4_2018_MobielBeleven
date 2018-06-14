@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/orange">
+    android:layout_height="match_parent">
+    <!--android:background="@color/orange_supertransparent">-->
+
 
     <ImageView
         android:id="@+id/detail_row_image_id"
@@ -16,13 +17,13 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/gallery_item_border_view_2"
         android:cropToPadding="true"
+        android:focusable="false"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.029"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:focusable="false"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/detail_row_txt_id"

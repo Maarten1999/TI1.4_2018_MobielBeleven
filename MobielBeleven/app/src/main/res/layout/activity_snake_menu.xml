@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grass_background_2"
-    tools:context=".Activities.SnakeMenu"
+    android:background="@color/orange"
+    android:fitsSystemWindows="false"
     android:orientation="vertical"
-    android:fitsSystemWindows="false">
+    tools:context=".Activities.SnakeMenu">
 
-    <include layout="@layout/activity_toolbar"
-        android:id="@+id/toolbar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/activity_toolbar" />
 
     <Button
         android:id="@+id/snake_menu_send_id"

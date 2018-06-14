@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange"
-    tools:context=".Activities.AttractionsOverview"
-    android:fitsSystemWindows="false">
+    android:fitsSystemWindows="false"
+    tools:context=".Activities.AttractionsOverview">
 
-    <include layout="@layout/activity_toolbar"
-        android:id="@+id/toolbar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/activity_toolbar" />
 
     <SearchView
         android:id="@+id/attraction_search_1_id"
@@ -18,9 +19,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:iconifiedByDefault="false"
-        android:focusableInTouchMode="true"
         android:focusable="false"
+        android:focusableInTouchMode="true"
+        android:iconifiedByDefault="false"
         android:inputType="text"
         android:orientation="horizontal"
         android:queryHint="Search Here"
@@ -28,7 +29,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
-    <requestFocus/>
+
+        <requestFocus />
     </SearchView>
 
     <ListView
