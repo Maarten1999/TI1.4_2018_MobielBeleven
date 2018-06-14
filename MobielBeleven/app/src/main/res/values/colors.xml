@@ -6,7 +6,7 @@
     <color name="background_view_color">@android:color/transparent</color>
     <color name="border_view_color">@android:color/darker_gray</color>
     <color name="go_circle_button_stroke_color">#040009</color>
-    <color name="go_circle_button_solid_color">#53F95E</color>
+    <color name="go_circle_button_solid_color">#ec9f42</color>
     <color name="go_circle_button_solid_color_grey">#D3D3D3</color>
     <color name="backgroundGreen">#76c848</color>
     <color name= "orange" >#b5f28b23</color>
