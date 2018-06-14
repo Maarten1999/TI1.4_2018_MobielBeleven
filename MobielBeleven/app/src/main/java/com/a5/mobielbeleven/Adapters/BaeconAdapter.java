@@ -88,6 +88,15 @@ public class BaeconAdapter {
                         ssidl.add(beacon.SSID);
                         break;
 
+
+                    case "PIETER_ATTRACTION_BEACON":
+                        ssidl.add(beacon.SSID);
+                        break;
+
+                    case "AMPERA_ATTRACTION_BEACON":
+                        ssidl.add(beacon.SSID);
+                        break;
+
                     default:
                         ssid = "0";
                         break;

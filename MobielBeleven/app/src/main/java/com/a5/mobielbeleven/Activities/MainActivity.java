@@ -109,10 +109,10 @@ public class MainActivity extends AppCompatActivity {
                         case "COBRA_ATTRACTION_BEACON":
                             intent = new Intent(getApplicationContext(), SnakeMenu.class);
                             break;
-                        case "2":
+                        case "AMPERA_ATTRACTION_BEACON":
                             intent = new Intent(getApplicationContext(), RaadDeSchaduw.class);
                             break;
-                        case "3":
+                        case "PIETER_ATTRACTION_BEACON":
                             intent = new Intent(getApplicationContext(), Puzzle.class);
                             break;
                     }
