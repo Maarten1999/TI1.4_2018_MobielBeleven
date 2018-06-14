@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303f9f</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#f58cb0</color>
     <color name="background_view_color">@android:color/transparent</color>
     <color name="border_view_color">@android:color/darker_gray</color>
     <color name="go_circle_button_stroke_color">#040009</color>
