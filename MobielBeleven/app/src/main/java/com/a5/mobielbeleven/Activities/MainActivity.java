@@ -18,6 +18,7 @@ import com.a5.mobielbeleven.Adapters.BaeconAdapter;
 import com.a5.mobielbeleven.R;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String BROADCAST_ACTION = "com.a5.mobielbeleven.mqttpayloadavailabe";
     static Timer timer = new Timer();
     static int seconds = 0;
     Button goButton;
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                             intent = new Intent(getApplicationContext(), Puzzle.class);
                             break;
                         case "2":
-                            intent = new Intent(getApplicationContext(), RaadDeSchaduw.class);
+                            intent = new Intent(getApplicationContext(), QuessTheShadow.class);
                             break;
                         case "3":
                             intent = new Intent(getApplicationContext(), SnakeMenu.class);
