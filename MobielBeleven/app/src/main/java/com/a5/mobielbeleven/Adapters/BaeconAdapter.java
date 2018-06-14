@@ -84,7 +84,7 @@ public class BaeconAdapter {
 
                 switch (beacon.SSID)
                 {
-                    case "beacon":
+                    case "COBRA_ATTRACTION_BEACON":
                         ssidl.add(beacon.SSID);
                         break;
 
