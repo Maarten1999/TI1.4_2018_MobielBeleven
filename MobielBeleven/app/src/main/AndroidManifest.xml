@@ -34,11 +34,7 @@
             android:name=".Activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Activities.AttractionsOverview"
@@ -87,7 +83,14 @@
             android:value="barcode"
             tools:replace="android:value" />
 
-        <activity android:name=".Activities.Help"></activity>
+        <activity
+            android:name=".Activities.Help"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
