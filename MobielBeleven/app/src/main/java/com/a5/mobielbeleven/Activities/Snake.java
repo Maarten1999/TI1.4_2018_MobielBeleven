@@ -44,7 +44,7 @@ public class Snake extends AppCompatActivity implements View.OnTouchListener
 
         startUpdateHandler();
     }
-
+    // code voor het updaten van de gameEngine en de Snakeview
     private void startUpdateHandler()
     {
         handler.postDelayed(new Runnable()
@@ -74,6 +74,7 @@ public class Snake extends AppCompatActivity implements View.OnTouchListener
         finish();
     }
 
+    //code voor het swipen in de game snake
     @Override
     public boolean onTouch(View view, MotionEvent event)
     {

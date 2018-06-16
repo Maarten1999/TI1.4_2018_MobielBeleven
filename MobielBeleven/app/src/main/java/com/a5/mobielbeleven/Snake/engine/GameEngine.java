@@ -106,6 +106,7 @@ public class GameEngine
         }
     }
 
+    //aanmaken map voor de snakeview
     public TileType[][] getMap()
     {
         TileType[][] map = new TileType[GameWidth][GameHeight];
@@ -130,6 +131,7 @@ public class GameEngine
         return map;
     }
 
+    //code voor het updaten van de positie van de snake en toevoegen van eventuele nieuwe snakestaart
     private void updateSnake(int x, int y)
     {
         int newX = snake.get(snake.size() - 1).getX();
@@ -175,7 +177,7 @@ public class GameEngine
         }
     }
 
-
+    // toevoegen van een apple op random locatie
     private void addApple()
     {
         Coordinate coordinate = null;

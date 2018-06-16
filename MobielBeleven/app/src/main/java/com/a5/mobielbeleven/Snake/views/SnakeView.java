@@ -28,6 +28,7 @@ public class SnakeView extends View
         this.snakeViewMap = map;
     }
 
+    //code voor tekenen van de snakeview
     @Override
     protected void onDraw(Canvas canvas)
     {

@@ -158,6 +158,7 @@ public class QuessTheShadow extends BaseToolbar {
 
         wrong = wrong+1;
 
+        //send message to mqtt
         MQTTConfig.getInstance().setMQTT_TOPIC(topic);
         try {
             pahoMqttClient.publishMessage(client,"{\"answer\":\"FOUT\"}",0,MQTTConfig.getInstance().PUBLISH_TOPIC());

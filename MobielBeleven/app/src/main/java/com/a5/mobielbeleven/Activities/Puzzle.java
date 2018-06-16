@@ -97,7 +97,7 @@ public class Puzzle extends BaseToolbar {
 //                        Toast toast = Toast.makeText(getApplicationContext(), "Goed", Toast.LENGTH_LONG);
 //                        toast.show();
                     puzzleinfo.setText("Goed! \n Druk nogmaals op de knop om terug te gaan naar het hoofdscherm");
-
+                    //send message
                     try {
                         MQTTConfig.getInstance().setMQTT_TOPIC(topic);
                         pahoMqttClient.publishMessage(client, "{\"answer\":\"GOED\"}", 0, MQTTConfig.getInstance().PUBLISH_TOPIC());
@@ -125,6 +125,7 @@ public class Puzzle extends BaseToolbar {
                     if (tryCount >= 3) {
                         puzzleinfo.setText("Fout! \n Druk nogmaals op de knop om terug te gaan naar het hoofdscherm.");
 
+                        //send message to mqtt
                         try {
                             MQTTConfig.getInstance().setMQTT_TOPIC(topic);
                             pahoMqttClient.publishMessage(client, "{\"answer\":\"FOUT\"}", 0, MQTTConfig.getInstance().PUBLISH_TOPIC());
@@ -157,7 +158,7 @@ public class Puzzle extends BaseToolbar {
 
     }
 
-
+    //check for correct answer
     public boolean correctAnswer()
     {
         String tempCorrectAnswer = answer.toLowerCase(Locale.getDefault());
