@@ -22,5 +22,6 @@
     <string name="snake_menu_score_sent">Sent score</string>
     <string name="searchBar">Search here...</string>
     <string name="snackbar_go">No game available.</string>
+    <string name="attractions_overview_searchview_queryhint">Search Here</string>
 
 </resources>

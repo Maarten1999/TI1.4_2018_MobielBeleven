@@ -21,6 +21,7 @@
     <string name="snake_menu_score_sent">Score verzenden</string>
     <string name="snackbar_go">Er is geen spel beschikbaar.</string>
     <string name="searchBar">zoeken...</string>
+    <string name="attractions_overview_searchview_queryhint">Zoek hier</string>
 
 
 </resources>

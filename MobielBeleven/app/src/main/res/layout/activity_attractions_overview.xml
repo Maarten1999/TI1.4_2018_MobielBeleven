@@ -24,7 +24,7 @@
         android:iconifiedByDefault="false"
         android:inputType="text"
         android:orientation="horizontal"
-        android:queryHint="Search Here"
+        android:queryHint="@string/attractions_overview_searchview_queryhint"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
