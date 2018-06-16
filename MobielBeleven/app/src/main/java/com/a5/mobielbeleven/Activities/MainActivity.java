@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     Snackbar snackbar = Snackbar
-                            .make(view, "No game avaible", Snackbar.LENGTH_LONG);
+                            .make(view, R.string.snackbar_go, Snackbar.LENGTH_LONG);
 
                     snackbar.show();
                 }

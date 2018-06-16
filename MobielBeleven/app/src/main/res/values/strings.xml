@@ -19,6 +19,8 @@
     <string name="guess_shadow_question">Wie is dit figuur?</string>
     <string name="QR_Text">Mocht de knop niet automatisch veranderen in de wachtrij. Scan dan de zwart/witte code aan het begin van de wachtrij van de attractie.</string>
     <string name="snake_menu_score_sent">Score verzenden</string>
+    <string name="snackbar_go">Er is geen spel beschikbaar.</string>
+    <string name="searchBar">zoeken...</string>
 
 
 </resources>

@@ -20,5 +20,7 @@
     <string name="puzzle_check">Check</string>
     <string name="guess_shadow_question">Who\'s shadow is this?</string>
     <string name="snake_menu_score_sent">Sent score</string>
+    <string name="searchBar">Search here...</string>
+    <string name="snackbar_go">No game available.</string>
 
 </resources>
