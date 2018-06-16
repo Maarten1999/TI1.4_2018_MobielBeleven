@@ -64,6 +64,8 @@ public class QuessTheShadow extends BaseToolbar {
         raadDeSchaduwSelecteren();
     }
 
+    //This method generates a random number that's either 1 or 2.
+    //The generated number decides what question will be displayed on the screen.
     public void raadDeSchaduwSelecteren(){
         schaduw = Math.round((float)(1 + Math.random()));
 
@@ -75,6 +77,7 @@ public class QuessTheShadow extends BaseToolbar {
         }
     }
 
+    //Method to generate the first quiz.
     public void firstTest(){
         iv.setImageResource(R.drawable.pardoes);
         radio = findViewById(R.id.raadDeSchaduwRadioGroupId);
@@ -98,6 +101,7 @@ public class QuessTheShadow extends BaseToolbar {
         });
     }
 
+    //Method to generate the second quiz.
     public void secondTest(){
         iv.setImageResource(R.drawable.langejan);
         radio = findViewById(R.id.raadDeSchaduwRadioGroupId);
@@ -121,6 +125,7 @@ public class QuessTheShadow extends BaseToolbar {
         });
     }
 
+    //If the answer is correct the snackbar will display this on the screen and send the score to the scoreboard.
     public void victory(View view){
         Snackbar.make(view,"Het antwoord is goed.", Snackbar.LENGTH_LONG).show();
 
@@ -147,6 +152,7 @@ public class QuessTheShadow extends BaseToolbar {
         }, 1000); // Millisecond 1000 = 1 sec
     }
 
+    //If the answer is not correct the snackbar will display this on the screen and send the score to the scoreboard.
     public void lose(View view){
         Snackbar.make(view,"Het antwoord is fout.", Snackbar.LENGTH_LONG).show();
 

@@ -31,6 +31,7 @@ public class QR extends BaseToolbar {
 
     final int RequestCameraPermissionID = 1001;
 
+    //Method will check camera permission on creating.
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -55,6 +56,7 @@ public class QR extends BaseToolbar {
         }
     }
 
+    //Turning serviceView into the camera for QR codes.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -107,6 +109,7 @@ public class QR extends BaseToolbar {
 
             }
 
+            //Switch with strings to generate QR codes.
             @Override
             public void receiveDetections(Detector.Detections<Barcode> detections) {
                 SparseArray<Barcode> qrcodes = detections.getDetectedItems();
@@ -133,6 +136,7 @@ public class QR extends BaseToolbar {
         });
 
     }
+
     public void runSnake(){
         cameraPreview.post(new Runnable() {
             @Override
